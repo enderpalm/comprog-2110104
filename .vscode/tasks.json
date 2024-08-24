@@ -1,0 +1,36 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build: create 'build' directory",
+            "command": "mkdir",   
+            "args": ["${workspaceFolder}\\build\\"],
+            "hide": true,
+            "presentation": { "echo": false, "reveal": "silent" }
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "dependsOn": "build: create 'build' directory",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceFolder}\\build\\${fileDirnameBasename}\\${fileBasenameNoExtension}.exe",
+                "--std=c++14"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": { "kind": "build", "isDefault": true }
+        },
+        {
+            "type": "shell",
+            "label": "build: clear 'build' directory",
+            "command": "rm",
+            "args": ["-Recurse", "${workspaceFolder}\\build\\*"],
+            "presentation": { "echo": false, "reveal": "silent" }
+        }
+    ],
+    "version": "2.0.0"
+}

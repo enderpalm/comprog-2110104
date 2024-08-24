@@ -1,0 +1,35 @@
+{
+    "fastio-std": {
+        "body": [
+            "std::ios_base::sync_with_stdio(false);",
+            "std::cin.tie(nullptr);",
+            "std::cout.tie(nullptr);"
+        ],
+        "scope": "cpp",
+        "prefix": "fastio-std"
+    },
+    "fastio-nostd": {
+        "body": [
+            "ios_base::sync_with_stdio(false);",
+            "cin.tie(nullptr);",
+            "cout.tie(nullptr);"
+        ],
+        "scope": "cpp",
+        "prefix": "fastio-nostd"
+    },
+    "main-fastio": {
+        "body": [
+            "#include <iostream>\n",
+            "using namespace std;\n",
+            "int main(int  /*argc*/, const char**  /*argv*/) {",
+            "\tios_base::sync_with_stdio(false);",
+            "\tcin.tie(nullptr);",
+            "\tcout.tie(nullptr);",
+            "\t//${1:code}",
+            "\treturn 0;",
+            "}\n"
+        ],
+        "scope": "cpp",
+        "prefix": "main-fastio"
+    }
+}
