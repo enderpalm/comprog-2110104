@@ -19,7 +19,7 @@
                 "${file}",
                 "-o",
                 "${workspaceFolder}\\build\\${fileDirnameBasename}\\${fileBasenameNoExtension}.exe",
-                "--std=c++14"
+                "--std=c++11"
             ],
             "problemMatcher": ["$gcc"],
             "group": { "kind": "build", "isDefault": true }
