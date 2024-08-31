@@ -11,15 +11,15 @@ struct student {
     char cal2;
 };
 
-bool first_qualify(student& spec) {
+bool first_qualify(student &spec) {
     return spec.comprog == 'A' && spec.cal1 <= 'C' && spec.cal2 <= 'C';
 }
 
-int choose(student& A, student& B) {
+int choose(student &A, student &B) {
     if (A.gpax == B.gpax && A.cal1 == B.cal1 && A.cal2 == B.cal2) return 2;
     if (A.gpax == B.gpax) {
-        if (A.cal1 == B.cal1) return A.cal2 > B.cal2 ? 0 : 1;
-        else return A.cal1 > B.cal1 ? 0 : 1;
+        if (A.cal1 == B.cal1) return A.cal2 < B.cal2 ? 0 : 1;
+        else return A.cal1 < B.cal1 ? 0 : 1;
     }
     return A.gpax > B.gpax ? 0 : 1;
 }
@@ -31,7 +31,8 @@ int main(int argc, const char **argv) {
             std_list[i].cal1 >> std_list[i].cal2;
     }
 
-    if (!first_qualify(std_list[0]) && !first_qualify(std_list[1])) cout << "None";
+    if (!first_qualify(std_list[0]) && !first_qualify(std_list[1]))
+        cout << "None";
     else if (!first_qualify(std_list[0])) cout << std_list[1].code;
     else if (!first_qualify(std_list[1])) cout << std_list[0].code;
     else {
