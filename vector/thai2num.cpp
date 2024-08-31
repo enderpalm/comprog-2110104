@@ -22,7 +22,6 @@ int main(int /*argc*/, const char ** /*argv*/) {
         if (readings == "q") break;
         istringstream ss(readings);
         int idx = 0, comp = 0, total = 0;
-        bool shift = false;
         while (ss >> read) {
             if (idx & 1) {
                 comp *= word2dig[read];
